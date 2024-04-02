@@ -1,4 +1,4 @@
-import { Calculator } from './Calculator.js';
+import { Calculator } from './CalculatorClass.js';
 
 const capitalize = require('./capitalize.js');
 
@@ -70,6 +70,22 @@ describe('TESTING CALCULATOR', () => {
     
     test('divide by zero', () => {
         expect(() => testingCalculator.divide(1, 0)).toThrow('Do not divide by 0!!!');
+    });
+});
+
+const caesarCipher = require('./caesarCipher.js');
+
+describe('TESTING CAESAR CIPHER', () => {
+    test('single character', () => {
+        expect(caesarCipher('a', 1)).toBe('b');
+    });
+
+    test('single character', () => {
+        expect(caesarCipher('abcde', 10)).toBe('klmno');
+    });
+
+    test('single character', () => {
+        expect(caesarCipher('abcde', 30)).toBe('!abcd');
     });
 });
 
